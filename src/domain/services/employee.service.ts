@@ -18,7 +18,7 @@ export default class EmployeeService {
   }
 
   private constructor(
-    private datasource: EmployeeDatasourceContract = new EmployeeDatasource()
+    private datasource: EmployeeDatasourceContract = new EmployeeDatasource(),
   ) {}
 
   public getEmployeeList(): Promise<EmployeeListModel | undefined> {
@@ -26,25 +26,25 @@ export default class EmployeeService {
   }
 
   public createEmployee(
-    params: CreateEmployeeParams
+    params: CreateEmployeeParams,
   ): Promise<EmployeeModel | undefined> {
     return this.datasource.createEmployee(params);
   }
 
   public getEmployeeById(
-    params: GetEmployeeByIdParams
+    params: GetEmployeeByIdParams,
   ): Promise<EmployeeModel | undefined> {
     return this.datasource.getEmployeeById(params);
   }
 
   public updateEmployeeById(
-    params: UpdateEmployeeParams
+    params: UpdateEmployeeParams,
   ): Promise<EmployeeModel | undefined> {
     return this.datasource.updateEmployeeById(params);
   }
 
   public deleteEmployeeById(
-    params: DeleteEmployeeByIdParams
+    params: DeleteEmployeeByIdParams,
   ): Promise<boolean> {
     return this.datasource.deleteEmployeeById(params);
   }

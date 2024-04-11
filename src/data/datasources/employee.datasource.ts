@@ -16,7 +16,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
   public async getEmployeeList(): Promise<EmployeeListModel | undefined> {
     try {
       const response = await fetch(
-        "https://dummy.restapiexample.com/api/v1/employees"
+        "https://dummy.restapiexample.com/api/v1/employees",
       );
 
       // Validate response
@@ -36,7 +36,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
   }
 
   public async createEmployee(
-    params: CreateEmployeeParams
+    params: CreateEmployeeParams,
   ): Promise<EmployeeModel | undefined> {
     try {
       const response = await fetch(
@@ -47,7 +47,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       // Validate response
@@ -67,7 +67,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
   }
 
   public async getEmployeeById(
-    params: GetEmployeeByIdParams
+    params: GetEmployeeByIdParams,
   ): Promise<EmployeeModel | undefined> {
     if (!params?.id) {
       return undefined;
@@ -75,7 +75,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
     try {
       const response = await fetch(
         `https://dummy.restapiexample.com/api/v1/employee/${params.id}`,
-        { method: "GET" }
+        { method: "GET" },
       );
 
       // Validate response
@@ -95,7 +95,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
   }
 
   public async updateEmployeeById(
-    params: UpdateEmployeeParams
+    params: UpdateEmployeeParams,
   ): Promise<EmployeeModel | undefined> {
     if (!params?.id || !params.data) {
       return undefined;
@@ -109,7 +109,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       // Validate response
@@ -129,7 +129,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
   }
 
   public async deleteEmployeeById(
-    params: DeleteEmployeeByIdParams
+    params: DeleteEmployeeByIdParams,
   ): Promise<boolean> {
     if (!params?.id) {
       return false;
@@ -137,7 +137,7 @@ export default class EmployeeDatasource extends EmployeeDatasourceContract {
     try {
       const response = await fetch(
         `https://dummy.restapiexample.com/api/v1/delete/${params.id}`,
-        { method: "DELETE" }
+        { method: "DELETE" },
       );
 
       // Validate response

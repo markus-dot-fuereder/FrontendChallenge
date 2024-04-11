@@ -10,18 +10,18 @@ export default abstract class EmployeeDatasourceContract {
   public abstract getEmployeeList(): Promise<EmployeeListModel | undefined>;
 
   public abstract createEmployee(
-    params: CreateEmployeeParams
+    params: CreateEmployeeParams,
   ): Promise<EmployeeModel | undefined>;
 
   public abstract getEmployeeById(
-    params: GetEmployeeByIdParams
+    params: GetEmployeeByIdParams,
   ): Promise<EmployeeModel | undefined>;
 
   public abstract updateEmployeeById(
-    params: UpdateEmployeeParams
+    params: UpdateEmployeeParams,
   ): Promise<EmployeeModel | undefined>;
 
   public abstract deleteEmployeeById(
-    params: DeleteEmployeeByIdParams
+    params: DeleteEmployeeByIdParams,
   ): Promise<boolean>;
 }
